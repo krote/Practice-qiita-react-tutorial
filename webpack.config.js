@@ -10,7 +10,7 @@ module.exports = {
             test:/\.jsx?$/,
             exclude: /(node_modules|bower_components)/,
             use:[{
-                loader:'babel-loadder',
+                loader:'babel-loader',
                 options:{
                     presets:['@babel/preset-react', '@babel/preset-env']
                 }
@@ -21,7 +21,7 @@ module.exports = {
         path:__dirname + "/src/",
         filename:"client.min.js"
     },
-    plugin:debug? [] :[
+    plugins:debug? [] :[
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({mangle:false, sourcemap:false}),
     ]
